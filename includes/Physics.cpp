@@ -43,7 +43,7 @@ void addGravity(std::vector<PhysicsObject> &objects) {
             if(n != i) {
                 // Calculate the gravitational acceleration
                 double gravAccel = gravitationalAcceleration(objects[i], objects[n]);
-                double theta = atan2(objects[i].y - objects[n].y, objects[i].x - objects[n].x) + PI;
+                double theta = atan2(objects[i].position.y - objects[n].position.y, objects[i].position.x - objects[n].position.x) + PI;
                 double xAccel = cos(theta) * gravAccel;
                 double yAccel = sin(theta) * gravAccel;
                 // Add the gravitational acceleration to the total
