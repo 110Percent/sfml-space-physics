@@ -15,7 +15,7 @@
 
 // Graviy constant
 const double GRAVITY = 6.67300e-11;
-
+const double PI = acos(-1);
 
 // Calculates the distance between two points
 double distance(PhysicsObject &firstObject, PhysicsObject &secondObject) {
@@ -43,9 +43,12 @@ void addGravity(std::vector<PhysicsObject> &objects) {
             if(n != i) {
                 // Calculate the gravitational acceleration
                 double gravAccel = gravitationalAcceleration(objects[i], objects[n]);
+                double theta = atan2(objects[i].y - objects[n].y, objects[i].x - objects[n].x) + PI;
+                double xAccel = cos(theta) * gravAccel;
+                double yAccel = sin(theta) * gravAccel;
                 // Add the gravitational acceleration to the total
-                totalAcceleration.x += gravAccel;
-                totalAcceleration.y += gravAccel;
+                totalAcceleration.x += xAccel;
+                totalAcceleration.y += yAccel;
             }
         }
 
