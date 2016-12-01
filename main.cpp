@@ -32,7 +32,7 @@ int main() {
     // Create the SFML window
     sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Template");
 
-    // Limit to 60 FPS
+    // Limit to 60 FPS./maui
     window.setFramerateLimit(60);
 
     // Add two planets
@@ -45,8 +45,9 @@ int main() {
     planet2.position = sf::Vector2f(300.0f, 300.0f);
     planet2.velocity = sf::Vector2f(0.0f, 0.0f);
     planet2.mass = 2000000000000;
-    planets.push_back(planet2);
+
     planets.push_back(planet1);
+    planets.push_back(planet2);
 
     // Main loop
     while(window.isOpen()) {
@@ -59,6 +60,14 @@ int main() {
             if(event.type == sf::Event::Closed) {
                 // Close the window
                 window.close();
+            // Check if the mouse button was released
+            } else if(event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
+                // Create a new planet
+                PhysicsObject newPlanet;
+                newPlanet.position = sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
+                newPlanet.velocity = sf::Vector2f(0.0f, 0.0f);
+                newPlanet.mass = 2000000000000;
+                planets.push_back(newPlanet);
             }
         }
 
