@@ -37,12 +37,12 @@ int main() {
 
     // Add two planets
     PhysicsObject planet1;
-    planet1.position = sf::Vector2f(50.0f, 50.0f);
+    planet1.position = sf::Vector2f(400.0f, 200.0f);
     planet1.velocity = sf::Vector2f(0.0f, 0.0f);
     planet1.mass = 2000000000000;
 
     PhysicsObject planet2;
-    planet2.position = sf::Vector2f(300.0f, 300.0f);
+    planet2.position = sf::Vector2f(400.0f, 400.0f);
     planet2.velocity = sf::Vector2f(0.0f, 0.0f);
     planet2.mass = 2000000000000;
 
