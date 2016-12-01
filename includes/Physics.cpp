@@ -65,3 +65,29 @@ void moveObjects(std::vector<PhysicsObject> &objects) {
         objects[i].position += objects[i].velocity;
     }
 }
+
+// Checks for circular collisions with a vector of
+// PhysicsObject's and destroys them if they collide
+void collideCircle(std::vector<PhysicsObject> &objects) {
+    // Loop through objects
+    std::vector<PhysicsObject> i = objects.begin();
+    while(i != objects.end()) {
+        // Loop through the other objects
+        std::vector<PhysicsObject> n = objects.begin();
+        while(n != objects.end()) {
+            // Make sure it's a different object
+            if(n != i) {
+                // Check if they collide
+                if(distance(i, n) < i.radius + n.radius) {
+                    // Remove both objects
+                    i = objects.erase(i);
+                    n = objects.erase(n);
+                } else {
+                    ++n;
+                }
+            }
+        }
+
+        ++i;
+    }
+}
