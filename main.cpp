@@ -40,11 +40,13 @@ int main() {
     planet1.position = sf::Vector2f(400.0f, 200.0f);
     planet1.velocity = sf::Vector2f(0.0f, 0.0f);
     planet1.mass = 2000000000000;
+    planet1.radius = 20;
 
     PhysicsObject planet2;
     planet2.position = sf::Vector2f(400.0f, 400.0f);
     planet2.velocity = sf::Vector2f(0.0f, 0.0f);
     planet2.mass = 2000000000000;
+    planet2.radius = 20;
 
     planets.push_back(planet1);
     planets.push_back(planet2);
@@ -67,6 +69,7 @@ int main() {
                 newPlanet.position = sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
                 newPlanet.velocity = sf::Vector2f(0.0f, 0.0f);
                 newPlanet.mass = 2000000000000;
+                newPlanet.radius = 20;
                 planets.push_back(newPlanet);
             }
         }

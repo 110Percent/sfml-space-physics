@@ -16,8 +16,8 @@
 void drawPlanets(std::vector<PhysicsObject> &planets, sf::RenderWindow &window) {
     // Loop through planets
     for(int i = 0; i < planets.size(); i++) {
-        // Create a circle with the planet's mass as radius
-        sf::CircleShape circle(20);
+        // Create a circle
+        sf::CircleShape circle(planets[i].radius);
         // Colour the circle
         circle.setFillColor(sf::Color::Red);
         // Set the position

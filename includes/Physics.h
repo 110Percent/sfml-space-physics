@@ -18,13 +18,13 @@
 // A physics object
 struct PhysicsObject {
     // Position
-    sf::Vector2f position;
-    // Direction
-    double direction;
+    sf::Vector2f position;;
     // Velocity
     sf::Vector2f velocity;
     // Mass
     double mass;
+    // Radius
+    double radius;
 };
 
 // Calculates the distance between two points
